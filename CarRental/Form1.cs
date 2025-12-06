@@ -11,8 +11,7 @@ namespace CarRental
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
+       
         }
 
 
