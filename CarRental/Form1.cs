@@ -11,7 +11,7 @@ namespace CarRental
 
         private void Form1_Load(object sender, EventArgs e)
         {
-       
+
         }
 
 
@@ -19,7 +19,7 @@ namespace CarRental
         {
             if (sidebarExpand)
             {
-                
+
                 sidebar.Width -= 10;
                 if (sidebar.Width <= sidebar.MinimumSize.Width)
                 {
@@ -29,7 +29,7 @@ namespace CarRental
             }
             else
             {
-               
+
                 sidebar.Width += 10;
                 if (sidebar.Width >= sidebar.MaximumSize.Width)
                 {
@@ -42,6 +42,30 @@ namespace CarRental
         private void btnMenu_Click(object sender, EventArgs e)
         {
             sidebarT.Start();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void iconMaximize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            iconrestore.Visible = true;
+            iconMaximize.Visible = false;
+        }
+
+        private void iconrestore_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            iconrestore.Visible = false;
+            iconMaximize.Visible = true;
+        }
+
+        private void iconminimizer_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
