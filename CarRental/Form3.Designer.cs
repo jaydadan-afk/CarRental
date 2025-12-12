@@ -28,86 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            btnSignUp = new Button();
+            txtUsername = new TextBox();
+            txtPass = new TextBox();
             label2 = new Label();
-            textBox3 = new TextBox();
+            txtPassConfirm = new TextBox();
             label3 = new Label();
             label1 = new Label();
+            txtMail = new TextBox();
+            label4 = new Label();
             SuspendLayout();
             // 
-            // button1
+            // btnSignUp
             // 
-            button1.Location = new Point(590, 370);
-            button1.Name = "button1";
-            button1.Size = new Size(123, 31);
-            button1.TabIndex = 0;
-            button1.Text = "Sign in";
-            button1.UseVisualStyleBackColor = true;
+            btnSignUp.FlatStyle = FlatStyle.Popup;
+            btnSignUp.Location = new Point(589, 389);
+            btnSignUp.Name = "btnSignUp";
+            btnSignUp.Size = new Size(123, 31);
+            btnSignUp.TabIndex = 0;
+            btnSignUp.Text = "Sign up";
+            btnSignUp.UseVisualStyleBackColor = true;
+            btnSignUp.Click += btnSignUp_Click;
             // 
-            // textBox1
+            // txtUsername
             // 
-            textBox1.Location = new Point(556, 196);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(186, 23);
-            textBox1.TabIndex = 2;
+            txtUsername.Location = new Point(556, 169);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(186, 23);
+            txtUsername.TabIndex = 2;
+            txtUsername.TextChanged += txtUsername_TextChanged;
             // 
-            // textBox2
+            // txtPass
             // 
-            textBox2.Location = new Point(556, 252);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(186, 27);
-            textBox2.TabIndex = 3;
+            txtPass.Location = new Point(556, 223);
+            txtPass.Multiline = true;
+            txtPass.Name = "txtPass";
+            txtPass.Size = new Size(186, 27);
+            txtPass.TabIndex = 3;
+            txtPass.TextChanged += txtPass_TextChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(556, 234);
+            label2.Location = new Point(556, 205);
             label2.Name = "label2";
-            label2.Size = new Size(57, 15);
+            label2.Size = new Size(60, 15);
             label2.TabIndex = 5;
-            label2.Text = "Password";
+            label2.Text = "Password:";
             // 
-            // textBox3
+            // txtPassConfirm
             // 
-            textBox3.Location = new Point(556, 312);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(186, 27);
-            textBox3.TabIndex = 6;
+            txtPassConfirm.Location = new Point(556, 281);
+            txtPassConfirm.Multiline = true;
+            txtPassConfirm.Name = "txtPassConfirm";
+            txtPassConfirm.Size = new Size(186, 27);
+            txtPassConfirm.TabIndex = 6;
+            txtPassConfirm.TextChanged += txtPassConfirm_TextChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(556, 294);
+            label3.Location = new Point(556, 263);
             label3.Name = "label3";
-            label3.Size = new Size(104, 15);
+            label3.Size = new Size(107, 15);
             label3.TabIndex = 7;
-            label3.Text = "Confirm Password";
+            label3.Text = "Confirm Password:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(556, 178);
+            label1.Location = new Point(556, 151);
             label1.Name = "label1";
-            label1.Size = new Size(60, 15);
+            label1.Size = new Size(63, 15);
             label1.TabIndex = 4;
-            label1.Text = "Username";
+            label1.Text = "Username:";
+            // 
+            // txtMail
+            // 
+            txtMail.BorderStyle = BorderStyle.FixedSingle;
+            txtMail.Location = new Point(556, 337);
+            txtMail.Multiline = true;
+            txtMail.Name = "txtMail";
+            txtMail.Size = new Size(186, 27);
+            txtMail.TabIndex = 8;
+            txtMail.TextChanged += txtMail_TextChanged;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(556, 319);
+            label4.Name = "label4";
+            label4.Size = new Size(39, 15);
+            label4.TabIndex = 9;
+            label4.Text = "Email:";
             // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(890, 491);
+            Controls.Add(label4);
+            Controls.Add(txtMail);
             Controls.Add(label3);
-            Controls.Add(textBox3);
+            Controls.Add(txtPassConfirm);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(button1);
+            Controls.Add(txtPass);
+            Controls.Add(txtUsername);
+            Controls.Add(btnSignUp);
             Name = "Form3";
             Text = "Form3";
             ResumeLayout(false);
@@ -116,12 +144,14 @@
 
         #endregion
 
-        private Button button1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private Button btnSignUp;
+        private TextBox txtUsername;
+        private TextBox txtPass;
         private Label label2;
-        private TextBox textBox3;
+        private TextBox txtPassConfirm;
         private Label label3;
         private Label label1;
+        private TextBox txtMail;
+        private Label label4;
     }
 }

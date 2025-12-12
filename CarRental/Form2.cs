@@ -12,39 +12,42 @@ namespace CarRental
 {
     public partial class Form2 : Form
     {
+        public static string RegisteredUsername = "";
+        public static string RegisteredPassword = "";
         public Form2()
         {
+
             InitializeComponent();
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
             string user = txtUser.Text.Trim();
             string pass = txtPass.Text.Trim();
 
-
-            if (user == "admin" && pass == "123")
+            if (user == "admin" && pass == "123"
+                || user == "user" && pass == "123")
             {
                 Form1 dashboard = new Form1();
                 dashboard.Show();
                 this.Hide();
+                return;
             }
 
-            else if (user == "user" && pass == "123")
+           
+            if (user == RegisteredUsername && pass == RegisteredPassword)
             {
                 Form1 dashboard = new Form1();
                 dashboard.Show();
                 this.Hide();
+                return;
             }
-            else
-            {
-                MessageBox.Show("Invalid username or password!");
-            }
+
+            MessageBox.Show("Invalid username or password!");
         }
 
         private void clickRegister_Click(object sender, EventArgs e)
         {
-
+                
             Form3 registrationForm = new Form3();
             registrationForm.Show();
             this.Hide();
