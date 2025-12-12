@@ -28,12 +28,100 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form3";
+            button1 = new Button();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            label2 = new Label();
+            textBox3 = new TextBox();
+            label3 = new Label();
+            label1 = new Label();
+            SuspendLayout();
+            // 
+            // button1
+            // 
+            button1.Location = new Point(590, 370);
+            button1.Name = "button1";
+            button1.Size = new Size(123, 31);
+            button1.TabIndex = 0;
+            button1.Text = "Sign in";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(556, 196);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(186, 23);
+            textBox1.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(556, 252);
+            textBox2.Multiline = true;
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(186, 27);
+            textBox2.TabIndex = 3;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(556, 234);
+            label2.Name = "label2";
+            label2.Size = new Size(57, 15);
+            label2.TabIndex = 5;
+            label2.Text = "Password";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(556, 312);
+            textBox3.Multiline = true;
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(186, 27);
+            textBox3.TabIndex = 6;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(556, 294);
+            label3.Name = "label3";
+            label3.Size = new Size(104, 15);
+            label3.TabIndex = 7;
+            label3.Text = "Confirm Password";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(556, 178);
+            label1.Name = "label1";
+            label1.Size = new Size(60, 15);
+            label1.TabIndex = 4;
+            label1.Text = "Username";
+            // 
+            // Form3
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(890, 491);
+            Controls.Add(label3);
+            Controls.Add(textBox3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
+            Controls.Add(button1);
+            Name = "Form3";
+            Text = "Form3";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Button button1;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private Label label2;
+        private TextBox textBox3;
+        private Label label3;
+        private Label label1;
     }
 }
