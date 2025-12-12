@@ -90,6 +90,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.ForeColor = Color.Red;
             label2.Location = new Point(490, 175);
             label2.Name = "label2";
             label2.Size = new Size(60, 15);
@@ -99,6 +100,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.ForeColor = Color.Red;
             label3.Location = new Point(490, 226);
             label3.Name = "label3";
             label3.Size = new Size(57, 15);
