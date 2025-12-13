@@ -1,56 +1,61 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Text.Json;
 using System.Windows.Forms;
 
 namespace CarRental
 {
     public partial class Form2 : Form
     {
-        public static string RegisteredUsername = "";
-        public static string RegisteredPassword = "";
         public Form2()
         {
-
             InitializeComponent();
         }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string user = txtUser.Text.Trim();
-            string pass = txtPass.Text.Trim();
-
-            if (user == "admin" && pass == "123"
-                || user == "user" && pass == "123")
+            string username = txtUser.Text.Trim();
+            string password = txtPass.Text.Trim();
+s
+            if (username == "admin" && password == "12345")
             {
-                Form1 dashboard = new Form1();
-                dashboard.Show();
+                MessageBox.Show("Welcome Admin!");
                 this.Hide();
+                new Form1().Show();
                 return;
             }
 
-           
-            if (user == RegisteredUsername && pass == RegisteredPassword)
+            string filePath = "users.json";
+
+            if (!File.Exists(filePath))
             {
-                Form1 dashboard = new Form1();
-                dashboard.Show();
-                this.Hide();
+                MessageBox.Show("No registered users found");
                 return;
             }
 
-            MessageBox.Show("Invalid username or password!");
+            string json = File.ReadAllText(filePath);
+            List<User> users = JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
+
+            
+            foreach (User u in users)
+            {
+                if (u.Username == username && u.Password == password)
+                {
+                    MessageBox.Show("Login successful!");
+                    this.Hide();
+                    new Form1().Show();
+                    return;
+                }
+            }
+
+            MessageBox.Show("Invalid username or password");
         }
 
         private void clickRegister_Click(object sender, EventArgs e)
         {
-                
-            Form3 registrationForm = new Form3();
-            registrationForm.Show();
             this.Hide();
+            new Form3().Show();
         }
     }
 }

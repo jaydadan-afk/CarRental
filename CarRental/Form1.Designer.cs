@@ -319,6 +319,7 @@
             Controls.Add(sidebar);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             panel6.ResumeLayout(false);

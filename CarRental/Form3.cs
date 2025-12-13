@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -40,39 +41,82 @@ namespace CarRental
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtUsername.Text) ||
-        string.IsNullOrWhiteSpace(txtPass.Text) ||
-        string.IsNullOrWhiteSpace(txtPassConfirm.Text) ||
-        string.IsNullOrWhiteSpace(txtMail.Text))
+            string username = Username_txt.Text.Trim();
+            string password = Password_txt.Text.Trim();
+            string confirm = ConfirmPass_txt.Text.Trim();
+
+         
+            if (username == "" || password == "" || confirm == "")
             {
-                MessageBox.Show("Please fill all fields!");
+                MessageBox.Show("Please fill in all fields");
                 return;
             }
 
-            if (txtPass.Text != txtPassConfirm.Text)
+           
+            if (password.Length < 8)
             {
-                MessageBox.Show("Passwords do not match!");
+                MessageBox.Show("Password must be at least 8 characters long");
                 return;
             }
 
-    
-            string email = txtMail.Text.Trim();
-            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-
-            if (!Regex.IsMatch(email, emailPattern))
+           
+            if (password.ToLower().Contains(username.ToLower()))
             {
-                MessageBox.Show("Please enter a valid email address!", "Invalid Email");
+                MessageBox.Show("Password must not contain the username");
                 return;
             }
 
-        
-            Form2.RegisteredUsername = txtUsername.Text.Trim();
-            Form2.RegisteredPassword = txtPass.Text.Trim();
+           
+            if (password != confirm)
+            {
+                MessageBox.Show("Passwords do not match");
+                return;
+            }
 
-            MessageBox.Show("Registered successfully!");
+            string filePath = "users.json";
+            List<User> users = new List<User>();
 
-            Form2 login = new Form2();
-            login.Show();
+            if (File.Exists(filePath))
+            {
+                string json = File.ReadAllText(filePath);
+                users = JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
+            }
+
+            // Username uniqueness check
+            foreach (User u in users)
+            {
+                if (u.Username == username)
+                {
+                    MessageBox.Show("Username already exists");
+                    return;
+                }
+            }
+
+            users.Add(new User
+            {
+                Username = username,
+                Password = password
+            });
+
+            string newJson = JsonSerializer.Serialize(users, new JsonSerializerOptions
+            {
+                WriteIndented = true
+            });
+
+            File.WriteAllText(filePath, newJson);
+
+            MessageBox.Show("Registration successful!");
+
+            this.Hide();
+            new Form2().Show();
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            Form2 registrationForm = new Form2();
+            registrationForm.Show();
             this.Hide();
         }
     }

@@ -28,36 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtUser = new TextBox();
-            txtPass = new TextBox();
             btnLogin = new Button();
             label1 = new Label();
             clickRegister = new Label();
             label2 = new Label();
             label3 = new Label();
+            txtUser = new TextBox();
+            txtPass = new TextBox();
             SuspendLayout();
-            // 
-            // txtUser
-            // 
-            txtUser.BorderStyle = BorderStyle.None;
-            txtUser.Location = new Point(178, 191);
-            txtUser.Multiline = true;
-            txtUser.Name = "txtUser";
-            txtUser.Size = new Size(191, 27);
-            txtUser.TabIndex = 0;
-            // 
-            // txtPass
-            // 
-            txtPass.BorderStyle = BorderStyle.None;
-            txtPass.Location = new Point(490, 244);
-            txtPass.Multiline = true;
-            txtPass.Name = "txtPass";
-            txtPass.Size = new Size(191, 28);
-            txtPass.TabIndex = 1;
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(549, 306);
+            btnLogin.Location = new Point(549, 290);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(75, 30);
             btnLogin.TabIndex = 2;
@@ -107,32 +89,47 @@
             label3.TabIndex = 6;
             label3.Text = "Password";
             // 
+            // txtUser
+            // 
+            txtUser.Location = new Point(490, 193);
+            txtUser.Name = "txtUser";
+            txtUser.Size = new Size(191, 23);
+            txtUser.TabIndex = 7;
+            // 
+            // txtPass
+            // 
+            txtPass.Location = new Point(490, 244);
+            txtPass.Name = "txtPass";
+            txtPass.Size = new Size(191, 23);
+            txtPass.TabIndex = 8;
+            txtPass.UseSystemPasswordChar = true;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(786, 442);
+            Controls.Add(txtPass);
+            Controls.Add(txtUser);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(clickRegister);
             Controls.Add(label1);
             Controls.Add(btnLogin);
-            Controls.Add(txtPass);
-            Controls.Add(txtUser);
             Name = "Form2";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private TextBox txtUser;
-        private TextBox txtPass;
         private Button btnLogin;
         private Label label1;
         private Label clickRegister;
         private Label label2;
         private Label label3;
+        private TextBox txtUser;
+        private TextBox txtPass;
     }
 }
