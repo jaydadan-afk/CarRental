@@ -45,28 +45,28 @@ namespace CarRental
             string password = Password_txt.Text.Trim();
             string confirm = ConfirmPass_txt.Text.Trim();
 
-         
+
             if (username == "" || password == "" || confirm == "")
             {
                 MessageBox.Show("Please fill in all fields");
                 return;
             }
 
-           
+
             if (password.Length < 8)
             {
                 MessageBox.Show("Password must be at least 8 characters long");
                 return;
             }
 
-           
+
             if (password.ToLower().Contains(username.ToLower()))
             {
                 MessageBox.Show("Password must not contain the username");
                 return;
             }
 
-           
+
             if (password != confirm)
             {
                 MessageBox.Show("Passwords do not match");
@@ -118,6 +118,11 @@ namespace CarRental
             Form2 registrationForm = new Form2();
             registrationForm.Show();
             this.Hide();
+        }
+
+        private void ConfirmPass_txt_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

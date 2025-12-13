@@ -17,7 +17,7 @@ namespace CarRental
         {
             string username = txtUser.Text.Trim();
             string password = txtPass.Text.Trim();
-s
+
             if (username == "admin" && password == "12345")
             {
                 MessageBox.Show("Welcome Admin!");
@@ -37,7 +37,7 @@ s
             string json = File.ReadAllText(filePath);
             List<User> users = JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
 
-            
+
             foreach (User u in users)
             {
                 if (u.Username == username && u.Password == password)
@@ -56,6 +56,11 @@ s
         {
             this.Hide();
             new Form3().Show();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
