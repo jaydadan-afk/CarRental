@@ -40,7 +40,7 @@
             // txtUser
             // 
             txtUser.BorderStyle = BorderStyle.None;
-            txtUser.Location = new Point(490, 196);
+            txtUser.Location = new Point(178, 191);
             txtUser.Multiline = true;
             txtUser.Name = "txtUser";
             txtUser.Size = new Size(191, 27);
