@@ -79,10 +79,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Gill Sans MT", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(3, 9);
             label1.Name = "label1";
-            label1.Size = new Size(296, 27);
+            label1.Size = new Size(293, 24);
             label1.TabIndex = 1;
             label1.Text = "CAR RENTAL MANAGEMENT";
             // 
@@ -319,6 +319,7 @@
             Controls.Add(sidebar);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             panel6.ResumeLayout(false);

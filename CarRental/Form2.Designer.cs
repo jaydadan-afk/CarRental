@@ -28,49 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtUser = new TextBox();
-            txtPass = new TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             btnLogin = new Button();
             label1 = new Label();
             clickRegister = new Label();
             label2 = new Label();
             label3 = new Label();
+            txtUser = new TextBox();
+            txtPass = new TextBox();
             SuspendLayout();
-            // 
-            // txtUser
-            // 
-            txtUser.BorderStyle = BorderStyle.None;
-            txtUser.Location = new Point(490, 196);
-            txtUser.Multiline = true;
-            txtUser.Name = "txtUser";
-            txtUser.Size = new Size(191, 27);
-            txtUser.TabIndex = 0;
-            // 
-            // txtPass
-            // 
-            txtPass.BorderStyle = BorderStyle.None;
-            txtPass.Location = new Point(490, 244);
-            txtPass.Multiline = true;
-            txtPass.Name = "txtPass";
-            txtPass.Size = new Size(191, 28);
-            txtPass.TabIndex = 1;
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(549, 306);
+            btnLogin.BackColor = Color.SteelBlue;
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(281, 530);
+            btnLogin.Margin = new Padding(3, 4, 3, 4);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(75, 30);
+            btnLogin.Size = new Size(130, 58);
             btnLogin.TabIndex = 2;
             btnLogin.Text = "Login";
-            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(490, 372);
+            label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(61, 785);
             label1.Name = "label1";
-            label1.Size = new Size(134, 15);
+            label1.Size = new Size(202, 25);
             label1.TabIndex = 3;
             label1.Text = "Don't have an account? ";
             // 
@@ -79,10 +66,11 @@
             clickRegister.AutoSize = true;
             clickRegister.BackColor = Color.Transparent;
             clickRegister.Cursor = Cursors.Hand;
+            clickRegister.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             clickRegister.ForeColor = Color.ForestGreen;
-            clickRegister.Location = new Point(619, 372);
+            clickRegister.Location = new Point(281, 782);
             clickRegister.Name = "clickRegister";
-            clickRegister.Size = new Size(49, 15);
+            clickRegister.Size = new Size(82, 28);
             clickRegister.TabIndex = 4;
             clickRegister.Text = "Register";
             clickRegister.Click += clickRegister_Click;
@@ -90,49 +78,71 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.ForeColor = Color.Red;
-            label2.Location = new Point(490, 175);
+            label2.Font = new Font("Arial Rounded MT Bold", 10.8F);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(100, 347);
             label2.Name = "label2";
-            label2.Size = new Size(60, 15);
+            label2.Size = new Size(102, 21);
             label2.TabIndex = 5;
             label2.Text = "Username";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.ForeColor = Color.Red;
-            label3.Location = new Point(490, 226);
+            label3.Font = new Font("Arial Rounded MT Bold", 10.8F);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(100, 436);
             label3.Name = "label3";
-            label3.Size = new Size(57, 15);
+            label3.Size = new Size(98, 21);
             label3.TabIndex = 6;
             label3.Text = "Password";
+            label3.Click += label3_Click;
+            // 
+            // txtUser
+            // 
+            txtUser.Location = new Point(100, 371);
+            txtUser.Margin = new Padding(3, 4, 3, 4);
+            txtUser.Name = "txtUser";
+            txtUser.Size = new Size(290, 27);
+            txtUser.TabIndex = 7;
+            // 
+            // txtPass
+            // 
+            txtPass.Location = new Point(100, 460);
+            txtPass.Margin = new Padding(3, 4, 3, 4);
+            txtPass.Name = "txtPass";
+            txtPass.Size = new Size(290, 27);
+            txtPass.TabIndex = 8;
+            txtPass.UseSystemPasswordChar = true;
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(786, 442);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(1582, 903);
+            Controls.Add(txtPass);
+            Controls.Add(txtUser);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(clickRegister);
             Controls.Add(label1);
             Controls.Add(btnLogin);
-            Controls.Add(txtPass);
-            Controls.Add(txtUser);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form2";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private TextBox txtUser;
-        private TextBox txtPass;
         private Button btnLogin;
         private Label label1;
         private Label clickRegister;
         private Label label2;
         private Label label3;
+        private TextBox txtUser;
+        private TextBox txtPass;
     }
 }
